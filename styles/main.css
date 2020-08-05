@@ -1,0 +1,94 @@
+/* 
+ Em CSS, os seletores têm força de estilo e seguem a ordem:
+            1 - ID's (#);
+            2 - Classes (.);
+            3 - Tag em si (h1, por exemplo);
+            * - Cascata (.titulos h1 {}).
+
+            * A cascata adiciona uma força ainda maior aos seletores.
+*/
+
+/* elemento raiz do HTML inteiro */
+:root {
+    /* variáveis CSS */
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842C2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #c1bccc;
+
+    font-size: 60%; /* controle das medidas rem */
+
+    /* tamanho da fonte padrão: 16px - 100% - 1rem 
+    px = unidade de medida forte, absoluta;
+    % = relativa ao que tá acima, flexível;
+    rem = relativa ao que foi definido no root, flexível;
+    em = relativa à unidade que tá acima, flexível 
+    */
+}
+
+/* box model
+    border, padding, margin, width, height; 
+    box-sizing: content = mede pelo conteúdo;
+                border = mede pela borda 
+*/ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* display
+    block = o elemento ocupa toda uma linha (h1, p);
+    inline = apenas o tamanho do conteúdo, ficando um ao lado do outro (a, span);
+    flex = fica flexível, inicialmente lado a lado, e é ajustado usando outras propriedades 
+*/
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+    font: 500 1.6rem Poppins;
+    /* font-weight: 500;
+    font-family: Poppins;
+    font-size: 1.6rem; */
+    color: var(--color-text-base);
+}
+
+#container {
+    width: 90vw;
+    max-width: 700px;
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 62.5%; /* todo 1rem vai equivaler a 10px */
+    }
+}
