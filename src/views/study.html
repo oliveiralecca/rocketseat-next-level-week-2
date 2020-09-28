@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proffy | Sua plataforma de estudos online</title>
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/partials/header.css">
-    <link rel="stylesheet" href="styles/partials/forms.css">
-    <link rel="stylesheet" href="styles/partials/page-study.css">
+    <link rel="stylesheet" href="/public/styles/main.css">
+    <link rel="stylesheet" href="/public/styles/partials/header.css">
+    <link rel="stylesheet" href="/public/styles/partials/forms.css">
+    <link rel="stylesheet" href="/public/styles/partials/page-study.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
@@ -20,9 +20,9 @@
         <header class="page-header">
             <div class="top-bar-container">
                 <a href="/"> <!-- volta para o "/" do BackEnd, que é o index.html -->
-                    <img src="images/icons/back.svg" alt="Voltar">
+                    <img src="/public/images/icons/back.svg" alt="Voltar">
                 </a>
-                <img src="images/logo.svg" alt="Proffy">
+                <img src="/public/images/logo.svg" alt="Proffy">
             </div>
 
             <div class="header-content">
@@ -63,27 +63,35 @@
         </header>
 
         <main>
-            <!-- estrutura de repetição que o nunjucks {} do BackEnd vai criar para mim, tornando isso dinâmico -->
-            {%for proffy in proffys%}
-                <article class="teacher-item"> <!-- conteúdo que vai se repetir várias vezes na página -->
-                    <header>
-                        <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
-                        <div>
-                            <strong>{{proffy.name}}</strong>
-                            <span>{{proffy.subject}}</span>
-                        </div>
-                    </header>
-                
-                    <p>{{proffy.bio}}</p>
-                
-                    <footer>
-                        <p>Preço/hora<strong>R$ {{proffy.cost}}</strong></p>
-                        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua aula de {{proffy.subject}}, {{proffy.name}}" class="button" target="_blank">
-                            <img src="images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
-                        </a>
-                    </footer>
-                </article>
-            {%endfor%}
+
+            {% if proffys == "" %}
+               <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
+
+            {% else %}
+
+               <!-- estrutura de repetição que o nunjucks {} do BackEnd vai criar para mim, tornando isso dinâmico -->
+               {% for proffy in proffys %}
+                  <article class="teacher-item"> <!-- conteúdo que vai se repetir várias vezes na página -->
+                     <header>
+                           <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
+                           <div>
+                              <strong>{{proffy.name}}</strong>
+                              <span>{{proffy.subject}}</span>
+                           </div>
+                     </header>
+                  
+                     <p>{{proffy.bio}}</p>
+                  
+                     <footer>
+                           <p>Preço/hora<strong>R$ {{proffy.cost}}</strong></p>
+                           <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua aula de {{proffy.subject}}, {{proffy.name}}" class="button" target="_blank">
+                              <img src="/public/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+                           </a>
+                     </footer>
+                  </article>
+               {% endfor %}
+            
+            {% endif %}
             
         </main>
     </div>

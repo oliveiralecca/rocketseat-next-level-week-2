@@ -2,7 +2,7 @@
  Em CSS, os seletores têm força de estilo e seguem a ordem:
             1 - ID's (#);
             2 - Classes (.);
-            3 - Tag em si (h1, por exemplo);
+            3 - Tag (h1, por exemplo);
             * - Cascata (.titulos h1 {}).
 
             * A cascata adiciona uma força ainda maior aos seletores.
@@ -37,14 +37,14 @@
     px = unidade de medida forte, absoluta;
     % = relativa ao que tá acima, flexível;
     rem = relativa ao que foi definido no root, flexível;
-    em = relativa à unidade que tá acima, flexível 
+    em = relativa à unidade que tá acima, flexível. 
     */
 }
 
 /* box model
     border, padding, margin, width, height; 
     box-sizing: content = mede pelo conteúdo;
-                border = mede pela borda 
+                border = mede pela borda. 
 */ 
 
 * {
@@ -56,7 +56,7 @@
 /* display
     block = o elemento ocupa toda uma linha (h1, p);
     inline = apenas o tamanho do conteúdo, ficando um ao lado do outro (a, span);
-    flex = fica flexível, inicialmente lado a lado, e é ajustado usando outras propriedades 
+    flex = fica flexível, inicialmente lado a lado, e é ajustado usando outras propriedades. 
 */
 
 html,

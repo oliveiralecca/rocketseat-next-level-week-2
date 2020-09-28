@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proffy | Sua plataforma de estudos online</title>
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/partials/header.css">
-    <link rel="stylesheet" href="styles/partials/forms.css">
-    <link rel="stylesheet" href="styles/partials/page-give-classes.css">
+    <link rel="stylesheet" href="/public/styles/main.css">
+    <link rel="stylesheet" href="/public/styles/partials/header.css">
+    <link rel="stylesheet" href="/public/styles/partials/forms.css">
+    <link rel="stylesheet" href="/public/styles/partials/page-give-classes.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
     <!-- o atributo "defer" (adiar) lê o script somente depois de tudo, o HTML pula essa linha ao fazer sua leitura linha a linha -->
-    <script src="scripts/addField.js" defer></script>
+    <script src="/public/scripts/addField.js" defer></script>
 
 </head>
 <body id="page-give-classes">
@@ -23,9 +23,9 @@
         <header class="page-header">
             <div class="top-bar-container">
                 <a href="/"> <!-- volta para o "/" do BackEnd. que é o index.html -->
-                    <img src="images/icons/back.svg" alt="Voltar">
+                    <img src="/public/images/icons/back.svg" alt="Voltar">
                 </a>
-                <img src="images/logo.svg" alt="Proffy">
+                <img src="/public/images/logo.svg" alt="Proffy">
             </div>
 
             <div class="header-content">
@@ -35,7 +35,7 @@
         </header>
 
         <main>
-            <form action="" id="create-class">
+            <form action="/save-classes" id="create-class" method="POST">
                 <fieldset>
                     <legend>Seus dados</legend>
 
@@ -73,9 +73,9 @@
                         <select name="subject" id="subject" required>
                             <option value="">Selecione qual você quer ensinar</option>
 
-                            {%for subject in subjects%}
-                                <option value="{{loop.index}}">{{subject}}</option>
-                            {%endfor%}
+                            {% for subject in subjects %}
+                                <option value="{{loop.index}}">{{ subject }}</option>
+                            {% endfor %}
 
                         </select>
                     </div>
@@ -122,7 +122,7 @@
 
             <footer>
                 <p>
-                    <img src="images/icons/warning.svg" alt="Aviso importante">
+                    <img src="/public/images/icons/warning.svg" alt="Aviso importante">
                     Importante! <br> Preencha todos os dados
                 </p>
                 <button type="submit" form="create-class">Salvar cadastro</button> <!-- o botão de enviar o formulário (submit), deve estar dentro do formulário. porém, por conta do layout dessa página, ele tem que estar fora. então chama-se o atributo form="" indicando o ID do formulário a ser enviado -->
