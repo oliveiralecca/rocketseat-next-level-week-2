@@ -8,7 +8,7 @@
             * A cascata adiciona uma força ainda maior aos seletores.
 */
 
-/* elemento raiz do HTML inteiro */
+/* elemento raiz do HTML inteiro = tag <html> */
 :root {
     /* variáveis CSS */
     --color-background: #F0F0F7;
@@ -35,9 +35,9 @@
 
     /* tamanho da fonte padrão: 16px - 100% - 1rem 
     px = unidade de medida forte, absoluta;
-    % = relativa ao que tá acima, flexível;
-    rem = relativa ao que foi definido no root, flexível;
-    em = relativa à unidade que tá acima, flexível. 
+    % = relativa ao elemento pai, flexível;
+    em = relativa ao elemento pai, flexível;
+    rem = relativa ao que foi definido no root (<html>), flexível.
     */
 }
 
