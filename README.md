@@ -1,2 +1,2 @@
 # rocketseat-next-level-week-2
- Projeto desenvolvido durante o evento NLW #2 da Rocketseat
+Project developed during the Rocketseat NLW # 2 event.
